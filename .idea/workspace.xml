@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d385d69a-a210-49c8-b893-7a562708e5b8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/uostime_springboot/UostimeSpringbootApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/uostime_springboot/UostimeSpringbootApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +62,17 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RunManager">
     <configuration name="UostimeSpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -85,7 +92,8 @@
       <option name="presentableId" value="Default" />
       <updated>1642863400311</updated>
       <workItem from="1642863412440" duration="388000" />
-      <workItem from="1642863888778" duration="659000" />
+      <workItem from="1642863888778" duration="1225000" />
+      <workItem from="1642865191460" duration="285000" />
     </task>
     <servers />
   </component>
