@@ -15,7 +15,7 @@ SpringBoot로 UOSTime의 기능을 점차적으로 구현할 프로젝트
 # 개발 절차
 ### issue rule
 1. 목표로 한 개발/배포에 대해 issue를 작성합니다.
-2. issue에 대한 branch를 생성 후, 코드 작성한 것을 develop branch에 commitm push 합니다.
+2. issue에 대한 branch를 생성 후, 코드 작성한 것을 develop branch에 commit & push 합니다.
 3. issue에 대한 기능이 완료된 경우, PR을 하여 코드 리뷰 후에 approve됨에따라 develop branch에 merge합니다.
     - develop -> new branch -> commit&push to develop -> pr -> merge to develop
 
