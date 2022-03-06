@@ -1,6 +1,7 @@
 package com.example.uostime_springboot.controller;
 
-import com.example.uostime_springboot.dto.RequestDTO;
+import com.example.uostime_springboot.dto.wise.RequestDTO;
+import com.example.uostime_springboot.dto.wise.ResponseDTO;
 import com.example.uostime_springboot.service.WiseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -15,8 +16,8 @@ public class WiseController {
 	private final WiseService wiseService;
 
 	@PutMapping("/lecture")
-	public String updateLecture(@RequestBody RequestDTO requestDTO){
-		return wiseService.updateLecture(requestDTO).toString();
+	public ResponseDTO updateLecture(@RequestBody RequestDTO requestDTO){
+		return wiseService.updateLecture(requestDTO);
 	}
 
 //	@PutMapping("/dept")

@@ -39,7 +39,6 @@ public class DeptDTO {
 	// save DB
 	public Dept toEntity(){
 		return Dept.builder()
-				.id(id)
 				.ptrOrd(ptr_ord)
 				.dept(dept)
 				.deptCodeNm(dept_code_nm)

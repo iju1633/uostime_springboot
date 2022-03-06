@@ -2,7 +2,8 @@ package com.example.uostime_springboot.service;
 
 import com.example.uostime_springboot.domain.Dept;
 import com.example.uostime_springboot.domain.Lecture;
-import com.example.uostime_springboot.dto.RequestDTO;
+import com.example.uostime_springboot.dto.wise.RequestDTO;
+import com.example.uostime_springboot.dto.wise.ResponseDTO;
 import com.example.uostime_springboot.repository.DeptRepository;
 import com.example.uostime_springboot.repository.LectureRepository;
 import com.example.uostime_springboot.util.LectureFilter;
@@ -111,22 +112,33 @@ public class WiseService {
 	}
 
 	@Transactional
-	public Integer updateLecture(RequestDTO requestDTO){
+	public ResponseDTO updateLecture(RequestDTO requestDTO){
 		String year = requestDTO.getYear();
 		String term = requestDTO.getTerm();
+		ResponseDTO result = new ResponseDTO();
 
 		List<Lecture> newLectureList = new ArrayList<>();
 		newLectureList.addAll(getMajorLecture(year, term));
 		newLectureList.addAll(getCultureLecture(year, term));
 
 		List<Lecture> oldLectureList = lr.findByYearAndTerm(year, term);
-		List<Lecture> deletedLectureList = lf.getDeletedLecture(oldLectureList, newLectureList);
-		deletedLectureList.forEach(l -> l.setUsed(false));
-		lr.saveAll(deletedLectureList);
 
+		// 삭제된 강의 used : true -> false 처리
+		List<Lecture> deletedLectureList = lf.getDeletedLecture(oldLectureList, newLectureList);
+		deletedLectureList.forEach(l -> l.changeUsedFlag(false));
+		lr.saveAll(deletedLectureList);
+		result.setDelete(deletedLectureList.size());
+
+		// 새로 추가된 강의 업데이트
+		List<Lecture> addedLectureList = lf.getAddedLecture(oldLectureList, newLectureList);
+		lr.saveAll(addedLectureList);
+		result.setInsert(addedLectureList.size());
+
+		// 정보 변경된 강의 업데이트
 		List<Lecture> updatedLectureList = lf.getUpdatedLecture(oldLectureList, newLectureList);
 		lr.saveAll(updatedLectureList);
+		result.setUpdate(updatedLectureList.size());
 
-		return updatedLectureList.size();
+		return result;
 	}
 }

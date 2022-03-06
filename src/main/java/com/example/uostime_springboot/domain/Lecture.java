@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@Setter
+//@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
@@ -67,4 +67,17 @@ public class Lecture {
 	private String term;
 
 	private Boolean used;
+
+	public void changeUsedFlag(Boolean b){
+		this.used = b;
+	}
+
+	public void updateInfo(Lecture l){
+		this.tlsnCount = l.getTlsnCount();
+		this.tlsnLimitCount = l.getTlsnLimitCount();
+		this.etcPermitYn = l.getEtcPermitYn();
+		this.secPermitYn = l.getSecPermitYn();
+		this.subjectDiv2 = l.getSubjectDiv2();
+		this.subjectNm = l.getSubjectNm();
+	}
 }

@@ -19,8 +19,8 @@ public class LectureMapper {
 	private String dayNightNm;
 	private String classType;
 	private String classNm;
-	private String etcPermitYn;
-	private String secPermitYn;
+//	private String etcPermitYn;
+//	private String secPermitYn;
 	private String year;
 	private String term;
 	private Lecture lecture;
@@ -36,8 +36,8 @@ public class LectureMapper {
 		this.dayNightNm = lecture.getDayNightNm();
 		this.classType = lecture.getClassType();
 		this.classNm = lecture.getClassNm();
-		this.etcPermitYn = lecture.getEtcPermitYn();
-		this.secPermitYn = lecture.getSecPermitYn();
+//		this.etcPermitYn = lecture.getEtcPermitYn();
+//		this.secPermitYn = lecture.getSecPermitYn();
 		this.year = lecture.getYear();
 		this.term = lecture.getTerm();
 		this.lecture = lecture;

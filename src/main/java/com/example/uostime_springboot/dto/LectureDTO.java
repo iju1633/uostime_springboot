@@ -55,7 +55,6 @@ public class LectureDTO {
 
 	public Lecture toEntity(){
 		return Lecture.builder()
-				.id(id)
 				.subDept(sub_dept)
 				.subjectDiv(subject_div)
 				.subjectDiv2(subject_div2)

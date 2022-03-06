@@ -1,4 +1,4 @@
-package com.example.uostime_springboot.dto;
+package com.example.uostime_springboot.dto.wise;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RequestDTO {
-	private String year;
-	private String term;
+public class ResponseDTO {
+	private Integer insert;
+	private Integer update;
+	private Integer delete;
 }

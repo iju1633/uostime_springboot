@@ -1,6 +1,7 @@
 package com.example.uostime_springboot.util;
 
 import com.example.uostime_springboot.domain.Lecture;
+import com.example.uostime_springboot.dto.LectureDTO;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -22,7 +23,7 @@ public class XMLParser {
 		List<Lecture> lectureList = new ArrayList<>();
 		for (int i = 0; i < nodeList.getLength(); i++){
 			Element item = (Element) nodeList.item(i);
-			Lecture lecture = new Lecture();
+			LectureDTO lectureDTO = new LectureDTO();
 			NodeList childNodes = item.getChildNodes();
 			for (int j = 0; j < childNodes.getLength(); j++){
 				Node node = childNodes.item(j);
@@ -30,67 +31,67 @@ public class XMLParser {
 				String value = node.getChildNodes().item(0).getNodeValue();
 				switch (node.getNodeName()){
 					case "year":
-						lecture.setYear(value);
+						lectureDTO.setYear(value);
 						break;
 					case "term":
-						lecture.setTerm(value);
+						lectureDTO.setTerm(value);
 						break;
 					case "subject_div2":
-						lecture.setSubjectDiv2(value);
+						lectureDTO.setSubject_div2(value);
 						break;
 					case "subject_div":
-						lecture.setSubjectDiv(value);
+						lectureDTO.setSubject_div(value);
 						break;
 					case "subject_no":
-						lecture.setSubjectNo(value);
+						lectureDTO.setSubject_no(value);
 						break;
 					case "class_div":
-						lecture.setClassDiv(value);
+						lectureDTO.setClass_div(value);
 						break;
 					case "subject_nm":
-						lecture.setSubjectNm(value);
+						lectureDTO.setSubject_nm(value);
 						break;
 					case "sub_dept":
-						lecture.setSubDept(value);
+						lectureDTO.setSub_dept(value);
 						break;
 					case "day_night_nm":
-						lecture.setDayNightNm(value);
+						lectureDTO.setDay_night_nm(value);
 						break;
 					case "shyr":
-						lecture.setShyr(Integer.parseInt(value));
+						lectureDTO.setShyr(Integer.parseInt(value));
 						break;
 					case "credit":
-						lecture.setCredit(Integer.parseInt(value));
+						lectureDTO.setCredit(Integer.parseInt(value));
 						break;
 					case "class_nm":
-						lecture.setClassNm(value);
+						lectureDTO.setClass_nm(value);
 						break;
 					case "prof_nm":
-						lecture.setProfNm(value);
+						lectureDTO.setProf_nm(value);
 						break;
 					case "class_type":
-						lecture.setClassType(value);
+						lectureDTO.setClass_type(value);
 						break;
 					case "tlsn_limit_count":
-						lecture.setTlsnLimitCount(Integer.parseInt(value));
+						lectureDTO.setTlsn_limit_count(Integer.parseInt(value));
 						break;
 					case "tlsn_count":
-						lecture.setTlsnCount(Integer.parseInt(value));
+						lectureDTO.setTlsn_count(Integer.parseInt(value));
 						break;
 					case "etc_permit_yn":
-						lecture.setEtcPermitYn(value);
+						lectureDTO.setEtc_permit_yn(value);
 						break;
 					case "sec_permit_yn":
-						lecture.setSecPermitYn(value);
+						lectureDTO.setSec_permit_yn(value);
 						break;
 					default:
 						break;
 				}
 			}
-			lecture.setUsed(true);
+			lectureDTO.setUsed(true);
+			Lecture lecture = lectureDTO.toEntity();
 			lectureList.add(lecture);
 		}
 		return lectureList;
 	}
-
 }
