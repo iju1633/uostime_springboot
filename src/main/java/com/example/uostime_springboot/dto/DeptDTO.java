@@ -11,14 +11,15 @@ import lombok.Setter;
 public class DeptDTO {
 	private Long	id;
 	private String	ptr_ord;
-	private String	dept;
+	private String	dept; // sub dept
 	private String	dept_code_nm;
 	private String	dept_nm;
 	private String	up_nm;
-	private String	up_dept;
+	private String	up_dept; // dept
 	private String	dept_div;
-	private String	colg;
+	private String	colg; // dept_div
 	private String	colg_nm;
+	private Boolean used;
 
 	// entity -> dto (when construct)
 	// search from DB
@@ -33,6 +34,7 @@ public class DeptDTO {
 		this.dept_div = entity.getDeptDiv();
 		this.colg = entity.getColg();
 		this.colg_nm = entity.getColgNm();
+		this.used = entity.getUsed();
 	}
 
 	// dto -> entity
@@ -40,7 +42,7 @@ public class DeptDTO {
 	public Dept toEntity(){
 		return Dept.builder()
 				.ptrOrd(ptr_ord)
-				.dept(dept)
+				.subDept(dept)
 				.deptCodeNm(dept_code_nm)
 				.deptNm(dept_nm)
 				.upNm(up_nm)
@@ -48,6 +50,7 @@ public class DeptDTO {
 				.deptDiv(dept_div)
 				.colg(colg)
 				.colgNm(colg_nm)
+				.used(used)
 				.build();
 	}
 }

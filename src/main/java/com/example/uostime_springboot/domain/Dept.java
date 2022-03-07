@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
@@ -42,4 +41,19 @@ public class Dept {
 
 	@Column(name = "colg_nm")
 	private String colgNm;
+
+	private Boolean used;
+
+	public void changeUsedFlag(Boolean b){
+		this.used = b;
+	}
+
+	public void updateInfo(Dept d){
+		this.ptrOrd = d.getPtrOrd();
+		this.deptCodeNm = d.getDeptCodeNm();
+		this.deptNm = d.getDeptNm();
+		this.upNm = d.getUpNm();
+		this.deptDiv = d.getDeptDiv();
+		this.colgNm = d.getColgNm();
+	}
 }
